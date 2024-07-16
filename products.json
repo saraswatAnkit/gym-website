@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Protein Power",
+        "price": 1200,
+        "image": "assets/cartItem04.png"
+    },
+    {
+        "id": 2,
+        "name": "Protein Gain",
+        "price": 1400,
+        "image": "assets/cartItem02.webp"
+    },
+    {
+        "id": 3,
+        "name": "Protein Energy",
+        "price": 1500,
+        "image": "assets/cartItem01.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Body Power",
+        "price": 1100,
+        "image": "assets/cartItem03.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Muscle Power",
+        "price": 1800,
+        "image": "assets/cartItem02.webp"
+    },
+    {
+        "id": 6,
+        "name": "Stronger Pro",
+        "price": 1900,
+        "image": "assets/cartItem01.jpeg"
+    }
+]
