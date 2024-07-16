@@ -778,4 +778,18 @@ header{
         gap: 30px;
         padding: 15px;
     }
+    #carousel .gallery-item{
+        width: 210px;
+        height: 40vh;
+        left: 10px;
+        top: 30px;
+    }
+    .plans{
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.7), 
+            rgba(0, 0, 0, 0.7)
+          ),url(http://wallpapers-all.com/uploads/posts/2016-12/9_gym.jpg);
+        background-position: center;
+        background-size: cover;
+    }
 }
