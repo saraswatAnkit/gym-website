@@ -683,6 +683,13 @@ header{
         width: 70%;
         right: 2rem;
     }
+    .products .box-container .box:hover{
+        transform: scale(1.1);
+    }
+    .products .box-container .box:hover .btn{
+        letter-spacing: 0px;
+        color: #fff;
+    }
 }
 @media (max-width: 450px){
     html{
