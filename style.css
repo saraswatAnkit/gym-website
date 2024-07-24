@@ -687,10 +687,10 @@ header{
     #loop{
         display: flex;
         position: absolute;
-        top: 50%;
+        top: 42%;
         height: 25%;
         width: 100%;
-        font-size: 6rem;
+        font-size: 8rem;
         white-space: nowrap;
         z-index: 1;
     }
