@@ -38,7 +38,7 @@
 
       <div class="icons">
         <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"><span>0</span></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"><span class="totalQuantity">0</span></div>
         <div class="fas fa-bars" id="menu-btn"></div>
       </div>
 
@@ -48,12 +48,18 @@
       </div>
 
       <div class="cart-items-container">
+        <div class="shopping-container">
         <div class="cart-item">
           <span class="fas fa-times"></span>
           <img src="assets/cartItem01.jpeg" alt="" />
           <div class="content">
             <h3>Cart Item 01</h3>
             <div class="price">1200/- Rs</div>
+          </div>
+          <div class="quantity">
+            <button class="inc">-</button>
+            <span class="value">3</span>
+            <button class="dec">+</button>
           </div>
         </div>
         <div class="cart-item">
@@ -80,7 +86,11 @@
             <div class="price">1200/- Rs</div>
           </div>
         </div>
-        <a href="#" class="btn">Order Now</a>
+      </div>
+        <div class="buttons">
+          <div class="close btn">CLOSE</div>
+        <a href="checkout.html" class="btn">Checkout</a>
+        </div>
       </div>
     </header>
 
@@ -109,7 +119,7 @@
       <h1 class="heading"><span>About</span> us</h1>
       <div class="row">
         <div class="image">
-          <img src="assets/aabout.png" alt="" />
+          <img src="assets/about.png" alt="" />
         </div>
         <div class="content">
           <h3>what makes our gym special?</h3>
@@ -213,11 +223,11 @@
     <section class="products" id="products">
       <h1 class="heading">our <span>products</span></h1>
       <div class="box-container">
-        <div class="box">
+        <!-- <div class="box">
           <img src="assets/cartItem04.png" alt="" />
           <h3>Protein Power</h3>
           <div class="price">Rs 1200 <span>  1600</span></div>
-          <a href="#" class="btn product-btn">Add To Cart</a>
+          <button class="btn product-btn">Add To Cart</button>
         </div>
         <div class="box">
           <img src="assets/cartItem02.webp" alt="" />
@@ -248,7 +258,7 @@
           <h3>Strongest Pro</h3>
           <div class="price">Rs 1200 <span> 1600</span></div>
           <a href="#" class="btn">Add To Cart</a>
-        </div>
+        </div> -->
       </div>
     </section>
     <!-- products section ends -->
