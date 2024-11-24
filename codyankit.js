@@ -25,3 +25,36 @@ window.onscroll = () => {
     cartItems.classList.remove('active')
     searchForm.classList.remove('active')
 }
+
+ScrollReveal({
+    distance: '80px',
+    duration: 2000,
+    delay: 200,
+})
+
+ScrollReveal().reveal('.home-pic,.content h3',{origin: 'top'})
+ScrollReveal().reveal('.image,.content p,.plan',{origin: 'bottom'})
+ScrollReveal().reveal('.map',{origin: 'bottom'})
+ScrollReveal().reveal('.box,form',{origin: 'right'})
+
+// typed js
+
+const typed1 = new Typed('.type-effect1', {
+    strings: ['Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores animi excepturi cupiditate voluptatem veritatis saepe omnis tempore mollitia aliquid. Ut?'],
+    typeSpeed: 10,
+    backSpeed: 20,
+    loop: true
+});
+const typed2 = new Typed('.type-effect2', {
+    strings: ['Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores animi excepturi cupiditate voluptatem veritatis saepe omnis tempore mollitia aliquid. Ut?'],
+    typeSpeed: 10,
+    backSpeed: 20,
+    loop: true
+});
+const typed3 = new Typed('.type-effect3', {
+    strings: ['Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores animi excepturi cupiditate voluptatem veritatis saepe omnis tempore mollitia aliquid. Ut?'],
+    typeSpeed: 10,
+    backSpeed: 20,
+    loop: true
+});
+
