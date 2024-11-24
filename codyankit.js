@@ -163,8 +163,4 @@ function changeQuantity($idProduct, $type){
     document.cookie = "listCart="+JSON.stringify(listCart)+"; "+timeSave+"; path=/;";
 
     addCartToHtml();
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 340053b686b5eb9f97a568e72bb08bacc9a67d10

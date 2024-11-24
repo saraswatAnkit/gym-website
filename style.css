@@ -819,9 +819,6 @@ header{
         grid-template-columns: repeat(1, 1fr);
         gap: 30px;
         padding: 15px;
-    }
-<<<<<<< HEAD
+    } 
 }
-=======
-}
->>>>>>> 340053b686b5eb9f97a568e72bb08bacc9a67d10
+
