@@ -41,3 +41,40 @@ function addCartToHtml(){
     totalQuantityHtml.innerText = totalQuantity;
     totalPriceHtml.innerText = 'Rs ' + totalPrice;
 }
+
+// Initialize Stripe with your Publishable Key
+const stripe = Stripe('pk_test_51QOglRKBdJE7awlLijtyc1lEuI7KemmYvFAsHPqYKpdPoPBBNjwXjrgiCVrXx8mQPPKYK72vMiuuRJFFfSwVRKIg00fz4zmAER'); // Replace with your publishable key
+const elements = stripe.elements();
+
+// Create a Card Element
+const card = elements.create('card', {
+    style: {
+        base: {
+            color: '#32325d',
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSmoothing: 'antialiased',
+            fontSize: '16px',
+            '::placeholder': {
+                color: '#aab7c4',
+            },
+        },
+        invalid: {
+            color: '#fa755a',
+            iconColor: '#fa755a',
+        },
+    },
+});
+
+// Mount the Card Element to the container
+card.mount('#card-element');
+
+// Handle real-time validation errors
+card.on('change', (event) => {
+    const displayError = document.getElementById('card-errors');
+    if (event.error) {
+        displayError.textContent = event.error.message;
+    } else {
+        displayError.textContent = '';
+    }
+});
+

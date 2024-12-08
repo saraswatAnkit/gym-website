@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body style="background-color: antiquewhite;">
+
     
 <div class="container">
     <div class="checkoutLayout">
@@ -30,20 +32,24 @@
             <h1>CHECKOUT</h1>
             <div class="form">
                 <div class="group">
-                    <label for="">Full Name</label>
-                    <input type="text">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name">
                 </div>
                 <div class="group">
-                    <label for="">Phone Number</label>
-                    <input type="text">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" name="phone">
                 </div>
                 <div class="group">
-                    <label for="">Address</label>
-                    <input type="text">
+                    <label for="email">Email</label>
+                    <input type="email" name="email">
                 </div>
                 <div class="group">
-                    <label for="">Country</label>
-                    <select name="" id="">
+                    <label for="address">Address</label>
+                    <input type="text" name="address">
+                </div>
+                <div class="group">
+                    <label for="country">Country</label>
+                    <select name="country" id="">
                         <option value="">Choose..</option>
                         <option value="london">london</option>
                         <option value="India">India</option>
@@ -61,13 +67,64 @@
                     <div class="totalPrice">$60</div>
                 </div>
             </div>
-            <button class="buttonCheckout">
+            <button class="buttonCheckout" onclick=makePayment()>
                 CHECKOUT
             </button>
         </div>
     </div>
+    <div id="card-element">
+        <!-- Stripe.js will mount the card input field here -->
+    </div>
+    <div id="card-errors" role="alert"></div>
+    
 </div>
 
     <script src="checkout.js"></script>
+    <script>
+        async function makePayment() {
+    const totalPrice = document.querySelector('.totalPrice').innerText.replace('Rs', ''); // Extract total price
+
+    try {
+        // Create a PaymentIntent via your backend
+        const response = await fetch('http://127.0.0.1:8000/api/payment/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ amount: totalPrice }), // Send the total price to the backend
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to create payment intent');
+        }
+
+        const data = await response.json();
+        const clientSecret = data.clientSecret;
+
+        // Confirm the payment with Stripe
+        const result = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card, // Use the mounted Card Element
+                billing_details: {
+                    name: document.querySelector('input[name="name"]').value,
+                    email: document.querySelector('input[name="email"]').value,
+                },
+            },
+        });
+
+        if (result.error) {
+            alert(`Payment failed: ${result.error.message}`);
+        } else if (result.paymentIntent.status === 'succeeded') {
+            alert('Payment successful!');
+            console.log(result.paymentIntent);
+        }
+    } catch (error) {
+        console.error(error);
+        alert('An error occurred while processing your payment.');
+    }
+}
+
+
+    </script>
 </body>
 </html>
