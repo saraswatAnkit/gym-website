@@ -270,19 +270,19 @@
       <div class="roww">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.260890341978!2d77.67414459999999!3d27.49226070000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3973716a8e509af5%3A0xd0bf5b24165965e9!2sBrijwasi%20Centrum!5e0!3m2!1sen!2sin!4v1719146180673!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
 
-        <form action="">
+        <form action="" id="contactForm">
           <h3>get in touch</h3>
           <div class="inputBox">
             <span class="fas fa-user"></span>
-            <input type="text" placeholder="Name">
+            <input type="text" name="name" placeholder="Name" required>
           </div>
           <div class="inputBox">
             <span class="fas fa-envelope"></span>
-            <input type="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email" required>
           </div>
           <div class="inputBox">
             <span class="fas fa-phone"></span>
-            <input type="tel" placeholder="Phone No.">
+            <input type="tel" name="phone" placeholder="Phone No." required>
           </div>
           <input type="submit" value="contact now" class="btn">
         </form>
@@ -368,6 +368,36 @@
      <script src="https://unpkg.com/scrollreveal"></script>
      <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="codyankit.js"></script>
+
+    <script>
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch("http://127.0.0.1:8000/api/contact/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          if (response.ok) {
+            alert("Your message has been sent successfully!");
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Failed to send the message. Please check your connection.");
+        }
+      })
+    </script>
   </body>
 </html>
 
