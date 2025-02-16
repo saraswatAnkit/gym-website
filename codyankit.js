@@ -44,19 +44,19 @@ ScrollReveal().reveal('.box,form',{origin: 'right'})
 // typed js
 
 const typed1 = new Typed('.type-effect1', {
-    strings: ['Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores animi excepturi cupiditate voluptatem veritatis saepe omnis tempore mollitia aliquid. Ut?'],
+    strings: ['The Saraswat Gym website is an absolute game-changer! The seamless navigation, interactive workout plans, and easy membership renewal make it a must-have for fitness enthusiasts. Highly recommended!'],
     typeSpeed: 10,
     backSpeed: 20,
     loop: true
 });
 const typed2 = new Typed('.type-effect2', {
-    strings: ['Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores animi excepturi cupiditate voluptatem veritatis saepe omnis tempore mollitia aliquid. Ut?'],
+    strings: ['Fantastic user experience! The website is fast, responsive, and packed with features like online session booking and personalized fitness plans. It has made my gym routine so much more efficient!'],
     typeSpeed: 10,
     backSpeed: 20,
     loop: true
 });
 const typed3 = new Typed('.type-effect3', {
-    strings: ['Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores animi excepturi cupiditate voluptatem veritatis saepe omnis tempore mollitia aliquid. Ut?'],
+    strings: ['A well-designed and highly functional platform! Secure authentication, automated membership management, and trainer interaction features make Saraswat Gym’s website stand out in the digital fitness space.'],
     typeSpeed: 10,
     backSpeed: 20,
     loop: true
