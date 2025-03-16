@@ -3,6 +3,8 @@ const BASR_URL = 'http://localhost:8000/api/accounts';
 async function signup(event){
   event.preventDefault();
 
+  document.getElementById('loading-spinner').style.display = 'block';
+
   const username = document.getElementById('username').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -32,6 +34,8 @@ async function signup(event){
   } catch (error) {
     console.error('Error:', error);
     alert('An error occured during signup.');
+  } finally {
+    document.getElementById('loading-spinner').style.display = 'none';
   }
 }
 

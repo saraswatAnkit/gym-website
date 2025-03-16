@@ -7,6 +7,8 @@ async function login(event){
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
+  document.getElementById('loading-spinner').style.display = 'block';
+
   try {
     const response = await fetch(`${BASR_URL}/login/`, {
       method: 'POST',
@@ -26,6 +28,8 @@ async function login(event){
   } catch (error) {
     console.error('Error:', error);
     alert('An error occured during login.');
+  } finally {
+    document.getElementById('loading-spinner').style.display = 'none';
   }
 }
 

@@ -26,7 +26,7 @@
 }
 .home .home-img img{
     height: 100%;
-    width: 100%;
+    width: 80%;
     position: relative;
 }
 body{
@@ -212,3 +212,86 @@ button:hover {
         transform: translateX(0%);
     }
 }
+
+/* Loading Spinner Styles */
+#loading-spinner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent background */
+    z-index: 9999;
+  }
+  
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #fff;
+    border-top: 4px solid #ab36f4;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes spin {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .login-box{
+        padding: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+    .header .logo img{
+        height: 2rem;
+    }
+    .home-img img{
+        width: 100%;
+    }
+    .login-box{
+        padding: 15px;
+    }
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+
+    .input-box input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .input-box label {
+        font-size: 12px;
+    }
+    .home-img img{
+        width: 100%;
+    }
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .register-link {
+        font-size: 12px;
+    }
+  }
+  
