@@ -25,6 +25,8 @@ async function signup(event){
     });
   
     if (response.ok) {
+      const result = await response.json();
+      localStorage.setItem('authToken', result.token)
       alert('Signup successful!');
       window.location.href = 'dashboard.html';
     } else {

@@ -55,6 +55,14 @@ section{
     letter-spacing: .2rem;
     background-color: #1f12d1;
 }
+.login-btn:hover{
+    background-color: #3e3896;
+    color: #fff;
+}
+.btn a{
+    text-decoration: none;
+    color: #fff;
+}
 header{
     display: flex;
     align-items: center;
