@@ -186,34 +186,29 @@ button:hover {
 }
 
 .fancy-text {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    background: red;
-    color: white;
-    padding: 10px 20px;
-    font-size: 20px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(167, 58, 172);
+    white-space: nowrap;
+    margin-left: 0%;
+}
+
+.fancy-text h3 {
+    display: inline-block;
+    font-size: 2.5rem;
     font-weight: bold;
+    color: white;
+    padding: 10px 0;
+    animation: moveText 10s linear infinite;
     text-transform: uppercase;
-    border-radius: 5px;
-    animation: moveText 3s ease-in-out infinite alternate;
 }
 
 @keyframes moveText {
-    0% {
-        left: 10%;
-        top: 50%;
-        opacity: 0.8;
+    from {
+        transform: translateX(-50%);
     }
-    50% {
-        left: 30%;
-        top: 30%;
-        opacity: 1;
-    }
-    100% {
-        left: 50%;
-        top: 10%;
-        opacity: 0.8;
+    to {
+        transform: translateX(0%);
     }
 }

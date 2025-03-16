@@ -1,26 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saraswat Shirts Company</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bicep-Gym</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-        <div class="logo">
-            <a href="/index.html"><img src="./assets/logo (1).png" alt=""></a>
-        </div>
-        
-            </header>
-    <div class="register-container">
-        <form class="register-box" onsubmit="return validateRegistration()">
-            <h2>Register</h2>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      href="favicon/favicon-16x16.png"
+      type="image/x-icon"
+    />
+    <style>
+      .fancy-text {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(85, 105, 186);
+    white-space: nowrap;
+    margin-left: 0%;
+}
+.fancy-text h3 {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(255, 254, 254);
+    padding: 10px 0;
+    animation: moveText 10s linear infinite;
+    text-transform: uppercase;
+}
+    </style>
+  </head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="./index.html">
+        <img src="assets/logo (1).png" alt="" />
+      </a>
+    </div>
+  </header>
+  <section class="home">
+    <div class="fancy-text"><h3>
+        show the <span>strongest version</span> of yourself &nbsp; &nbsp;
+        &nbsp;
+        show the <span>strongest version</span> of yourself &nbsp;&nbsp;&nbsp;
+      show the <span>strongest version</span> of yourself&nbsp;&nbsp;</h3></div>
+  <div class="home-img">
+    <img src="assets/dew.webp" alt=""
+    class="home-pic" />
+  </div>
+    <div class="login-container">
+        <form class="login-box" id="signup-form">
+            <h2>Sign Up</h2>
             <div class="input-box">
-                <input type="text" id="fullname" required>
-                <label>Full Name</label>
+                <input type="text" id="username" required>
+                <label>Username</label>
             </div>
             <div class="input-box">
                 <input type="email" id="email" required>
@@ -34,16 +75,18 @@
                 <input type="password" id="confirm-password" required>
                 <label>Confirm Password</label>
             </div>
-            <div class="terms">
-                <label><input type="checkbox" id="terms"> I accept the terms & conditions</label>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember Me</label>
+                <!-- <a href="#">Forgot Password?</a> -->
             </div>
-            <button type="submit">Register</button>
-            <div class="login-link">
-                <p>Already have an account? <a href="login.html">Login</a></p>
+            <button type="submit">Sign up</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="login-signup.html">Login</a></p>
             </div>
         </form>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

@@ -1,31 +1,38 @@
-const switchToSignup = document.getElementById("switchToSignup");
-const switchToLogin = document.getElementById("switchToLogin");
-const showSignup = document.getElementById("showSignup");
-const showLogin = document.getElementById("showLogin");
+const BASR_URL = 'http://localhost:8000/api/accounts';
 
-const loginForm = document.querySelector(".login-container");
-const signupForm = document.querySelector(".signup-container");
+async function signup(event){
+  event.preventDefault();
 
-switchToSignup.addEventListener("click", () => {
-  loginForm.style.opacity = "0";
-  signupForm.style.opacity = "1";
-  signupForm.style.zIndex = "2";
-  loginForm.style.zIndex = "1";
-});
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
 
-switchToLogin.addEventListener("click", () => {
-  signupForm.style.opacity = "0";
-  loginForm.style.opacity = "1";
-  loginForm.style.zIndex = "2";
-  signupForm.style.zIndex = "1";
-});
+  if (password !== confirmPassword) {
+    alert('Passwords do not match');
+    return;
+  }
 
-showSignup.addEventListener("click", (e) => {
-  e.preventDefault();
-  switchToSignup.click();
-});
+  try {
+    const response = await fetch(`${BASR_URL}/signup/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, email, password }),
+    });
+  
+    if (response.ok) {
+      alert('Signup successful!');
+      window.location.href = 'dashboard.html';
+    } else {
+      const result = await response.json();
+      alert(`Signup failed: ${result.error || "Unknown error"}`)
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occured during signup.');
+  }
+}
 
-showLogin.addEventListener("click", (e) => {
-  e.preventDefault();
-  switchToLogin.click();
-});
+document.getElementById('signup-form').addEventListener('submit', signup);
